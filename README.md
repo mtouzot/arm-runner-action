@@ -22,8 +22,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: pguyot/arm-runner-action@v2
+    - uses: actions/checkout@v6
+    - uses: mtouzot/arm-runner-action@v2.6.6-mt.1
       with:
         commands: |
             commands to run tests
@@ -36,8 +36,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: pguyot/arm-runner-action@v2
+    - uses: actions/checkout@v6
+    - uses: mtouzot/arm-runner-action@v2.6.6-mt.1
       id: build_image
       with:
         base_image: raspios_lite:2022-04-04
@@ -407,7 +407,7 @@ jobs:
           base_image: raspios_lite_arm64:latest
           cpu_info: raspberrypi_zero2_w_arm64_w
     steps:
-    - uses: pguyot/arm-runner-action@v2
+    - uses: mtouzot/arm-runner-action@v2.6.6-mt.1
       with:
         base_image: ${{ matrix.base_image }}
         cpu: ${{ matrix.cpu }}
